@@ -1,48 +1,69 @@
-# Minimum Hotel Stays
 
-This project provides a solution to find the minimum number of hotel stays required to travel from the first city to the last city, given a maximum driving time limit per day. The solution uses Dijkstra's algorithm with a priority queue to efficiently compute the shortest paths considering hotel stays.
+
+# Transport Company Routing Problem
+
+This project implements a solution for a transport company that needs to deliver goods between cities while adhering to specific travel constraints. The driver can only drive for a maximum of 10 hours per day, and the delivery route must include stays at designated hotels.
 
 ## Table of Contents
+
+- [Project Overview](#project-overview)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Project Structure](#project-structure)
 - [Algorithm Explanation](#algorithm-explanation)
 - [Test Cases](#test-cases)
 - [Contributing](#contributing)
 - [License](#license)
 
+## Project Overview
+
+The goal of this project is to find the minimum number of hotel stays required for a driver to travel from a starting city to a destination city. The driver must stay overnight at hotels and can only drive for a maximum of 10 hours (600 minutes) between hotels or to the destination.
+
 ## Installation
 
-To run this project, you need to have Python 3.x installed. The project does not require any additional libraries beyond Python's standard library.
+To run this project, you need Python 3.x installed on your system. You can check your Python version by running:
+
+```bash
+python --version
+```
+
+### Clone the Repository
+
+Clone the repository using Git:
+
+```bash
+git clone https://github.com/esmail-sarhadi/Minimum-Hotel-Stays.git
+cd transport-routing
+```
+
+### Run the Code
+
+You can run the code directly in a Python environment. Make sure you have `heapq` module (it is part of the standard library).
 
 ## Usage
 
-1. Clone this repository:
-    ```bash
-    git clone https://github.com/yourusername/minimum-hotel-stays.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd minimum-hotel-stays
-    ```
-3. Run the script:
-    ```bash
-    python minimum_hotel_stays.py
-    ```
+The program can be run in two modes: 
 
-The script will prompt you to choose between user input or running predefined test cases.
+1. **User Input Mode**: Allows you to enter cities, hotels, and roads manually.
+2. **Test Case Mode**: Runs predefined test cases to validate the implementation.
 
 ### User Input
 
-If you choose to enter user input, you will be prompted to provide:
+To use the user input mode, simply run the script and choose option `1`:
+
+```bash
+python transport_routing.py
+```
+
+You will be prompted to enter the following:
+
 - The number of cities.
-- The list of hotel city indices (separated by spaces).
+- A list of hotel city indices (separated by spaces).
 - The number of roads.
-- The details of each road (starting city, ending city, travel time).
+- Details for each road (starting city, ending city, travel time).
 
-### Example
+### Example Input
 
-```plaintext
+```
 Choose (1) User Input or (2) Run Test Cases: 1
 Enter the number of cities: 6
 Enter the list of hotel city indices (separated by spaces): 2 5 3
@@ -55,50 +76,53 @@ Enter road details (starting city, ending city, travel time): 5 6 139
 Enter road details (starting city, ending city, travel time): 1 3 375
 Enter road details (starting city, ending city, travel time): 2 5 462
 Enter road details (starting city, ending city, travel time): 4 6 300
-Minimum hotel stays: 2
 ```
 
-### Running Test Cases
+### Test Case Mode
 
-If you choose to run the predefined test cases, the script will automatically execute the test cases and display the results.
+To run predefined test cases, choose option `2`:
 
-## Project Structure
+```bash
+Choose (1) User Input or (2) Run Test Cases: 2
+```
 
-- `minimum_hotel_stays.py`: Main script containing the code for calculating the minimum hotel stays.
-- `README.md`: Project documentation.
+The results will display the minimum hotel stays required for each test case.
 
 ## Algorithm Explanation
 
-The algorithm uses Dijkstra's algorithm with a priority queue to efficiently find the shortest paths. The key aspects include:
-- Considering hotel stays to reset the travel time counter.
-- Updating the number of hotel stays when reaching a city that has a hotel.
-- Ensuring the total travel time does not exceed the maximum allowed driving time (600 minutes).
+The solution uses Dijkstra's algorithm to find the shortest path while considering the constraints of hotel stays and driving time.
+
+1. **Graph Representation**: Cities and roads are represented using an adjacency list.
+2. **Priority Queue**: A min-heap (priority queue) is employed to always explore the city with the least accumulated travel time.
+3. **Hotel Handling**: When a city with a hotel is reached, the driver is allowed to reset the travel time and increment the hotel stay count.
+4. **Output**: The function returns the minimum number of hotel stays needed to reach the destination city or `-1` if no valid path exists.
 
 ## Test Cases
 
-The script includes several test cases to validate the correctness of the solution. Here are some example test cases:
+Several test cases are included to validate the implementation. These test cases can be found within the code. Each test case consists of:
 
-```plaintext
-Test Case: n = 6, hotels = [2, 5, 3], roads = [(1, 2, 400), (3, 2, 80), (3, 4, 301), (4, 5, 290), (5, 6, 139), (1, 3, 375), (2, 5, 462), (4, 6, 300)]
-Minimum hotel stays: 2
+- A set number of cities.
+- A list of cities with hotels.
+- A set of roads connecting the cities with travel times.
 
-Test Case: n = 5, hotels = [3, 2], roads = [(1, 2, 400), (1, 3, 350), (2, 3, 200), (2, 4, 300), (3, 4, 500), (4, 5, 200)]
-Minimum hotel stays: 2
+### Sample Test Cases
+
+```python
+(6, [2, 5, 3], [(1, 2, 400), (3, 2, 80), (3, 4, 301), (4, 5, 290), (5, 6, 139), (1, 3, 375), (2, 5, 462), (4, 6, 300)])
+(5, [3, 2], [(1, 2, 400), (1, 3, 350), (2, 3, 200), (2, 4, 300), (3, 4, 500), (4, 5, 200)])
 ```
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any changes.
+Contributions are welcome! If you have suggestions for improvements or features, please fork the repository and create a pull request.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 
-### Description
 
-This project aims to solve the problem of finding the minimum number of hotel stays required to travel between cities, considering a daily driving time limit. It uses an efficient graph traversal algorithm and includes both user input functionality and predefined test cases for validation.
-
+Feel free to modify the README file according to your project structure or specific requirements. This template provides a comprehensive overview and will help users understand how to interact with the program effectively.
 
 <a href="https://nowpayments.io/donation?api_key=REWCYVC-A1AMFK3-QNRS663-PKJSBD2&source=lk_donation&medium=referral" target="_blank">
      <img src="https://nowpayments.io/images/embeds/donation-button-black.svg" alt="Crypto donation button by NOWPayments">
