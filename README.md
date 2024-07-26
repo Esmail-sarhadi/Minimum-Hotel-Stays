@@ -1,24 +1,27 @@
+Here is the refined README file for your Transport Company Routing Problem project:
 
+---
 
-# Transport Company Routing Problem
+# 🚚 Transport Company Routing Problem
 
 This project implements a solution for a transport company that needs to deliver goods between cities while adhering to specific travel constraints. The driver can only drive for a maximum of 10 hours per day, and the delivery route must include stays at designated hotels.
 
-## Table of Contents
+## 📑 Table of Contents
 
-- [Project Overview](#project-overview)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Algorithm Explanation](#algorithm-explanation)
-- [Test Cases](#test-cases)
-- [Contributing](#contributing)
-- [License](#license)
+- [📖 Project Overview](#project-overview)
+- [⚙️ Installation](#installation)
+- [📚 Usage](#usage)
+- [🔬 Algorithm Explanation](#algorithm-explanation)
+- [🔢 Test Cases](#test-cases)
+- [🤝 Contributing](#contributing)
+- [📄 License](#license)
+- [💖 Donation](#donation)
 
-## Project Overview
+## 📖 Project Overview
 
 The goal of this project is to find the minimum number of hotel stays required for a driver to travel from a starting city to a destination city. The driver must stay overnight at hotels and can only drive for a maximum of 10 hours (600 minutes) between hotels or to the destination.
 
-## Installation
+## ⚙️ Installation
 
 To run this project, you need Python 3.x installed on your system. You can check your Python version by running:
 
@@ -32,16 +35,16 @@ Clone the repository using Git:
 
 ```bash
 git clone https://github.com/esmail-sarhadi/Minimum-Hotel-Stays.git
-cd transport-routing
+cd Minimum-Hotel-Stays
 ```
 
 ### Run the Code
 
-You can run the code directly in a Python environment. Make sure you have `heapq` module (it is part of the standard library).
+You can run the code directly in a Python environment. The necessary libraries (`heapq`) are part of the standard library.
 
-## Usage
+## 📚 Usage
 
-The program can be run in two modes: 
+The program can be run in two modes:
 
 1. **User Input Mode**: Allows you to enter cities, hotels, and roads manually.
 2. **Test Case Mode**: Runs predefined test cases to validate the implementation.
@@ -61,7 +64,7 @@ You will be prompted to enter the following:
 - The number of roads.
 - Details for each road (starting city, ending city, travel time).
 
-### Example Input
+#### Example Input
 
 ```
 Choose (1) User Input or (2) Run Test Cases: 1
@@ -88,7 +91,7 @@ Choose (1) User Input or (2) Run Test Cases: 2
 
 The results will display the minimum hotel stays required for each test case.
 
-## Algorithm Explanation
+## 🔬 Algorithm Explanation
 
 The solution uses Dijkstra's algorithm to find the shortest path while considering the constraints of hotel stays and driving time.
 
@@ -97,7 +100,7 @@ The solution uses Dijkstra's algorithm to find the shortest path while consideri
 3. **Hotel Handling**: When a city with a hotel is reached, the driver is allowed to reset the travel time and increment the hotel stay count.
 4. **Output**: The function returns the minimum number of hotel stays needed to reach the destination city or `-1` if no valid path exists.
 
-## Test Cases
+## 🔢 Test Cases
 
 Several test cases are included to validate the implementation. These test cases can be found within the code. Each test case consists of:
 
@@ -112,18 +115,21 @@ Several test cases are included to validate the implementation. These test cases
 (5, [3, 2], [(1, 2, 400), (1, 3, 350), (2, 3, 200), (2, 4, 300), (3, 4, 500), (4, 5, 200)])
 ```
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! If you have suggestions for improvements or features, please fork the repository and create a pull request.
 
-## License
+## 📄 License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-
-
-Feel free to modify the README file according to your project structure or specific requirements. This template provides a comprehensive overview and will help users understand how to interact with the program effectively.
+## 💖 Donation
+If you found this project helpful, consider making a donation:
 
 <a href="https://nowpayments.io/donation?api_key=REWCYVC-A1AMFK3-QNRS663-PKJSBD2&source=lk_donation&medium=referral" target="_blank">
      <img src="https://nowpayments.io/images/embeds/donation-button-black.svg" alt="Crypto donation button by NOWPayments">
-    </a>
+</a>
+
+---
+
+Feel free to let me know if there are any additional changes or updates you'd like!
