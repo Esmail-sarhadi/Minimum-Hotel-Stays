@@ -1,6 +1,3 @@
-Here is the refined README file for your Transport Company Routing Problem project:
-
----
 
 # 🚚 Transport Company Routing Problem
 
@@ -130,6 +127,4 @@ If you found this project helpful, consider making a donation:
      <img src="https://nowpayments.io/images/embeds/donation-button-black.svg" alt="Crypto donation button by NOWPayments">
 </a>
 
----
 
-Feel free to let me know if there are any additional changes or updates you'd like!
